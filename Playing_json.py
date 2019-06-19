@@ -9,7 +9,7 @@ import json
 # json.dump - used to dump the json to
 # json.dumps
 
-# Create a JSON object and Dumping to a file
+# Create a JSON object and Dumping to a file (JSON.DUMP)
 movie = {}
 movie["title"] = "Minority Report"
 movie["director"] = "Steven Spielberg"
@@ -24,7 +24,7 @@ json.dump(movie, file2, ensure_ascii=False)
 file2.close()
 
 
-# Load a JSON Object from a string
+# Load a JSON Object from a string (JSON.LOADS)
 
 string = """
   { "title": "Tron: Legacy",
@@ -38,3 +38,13 @@ string = """
 tron = json.loads(string)
 tron["title"]
 tron["actors"]
+
+
+# Load a JSON Object from a File (JSON.LOAD)
+
+json_file = open("F:\GItHub\Python_Exercise\movie.txt", "r", encoding="utf-8")
+movie = json.load(json_file)
+json_file.close()
+
+type(movie)
+movie["actors"]
