@@ -1,9 +1,15 @@
 # C:\Python36\
+impor math
 
 print("{}testing a function".format('kelvin'))
 
 
+# Create a function to calculate the area of a sphere.
+def AreaSphere(r):
+    v =  4.0 / 3.0 * math.pi * r **3
+    return v
 
+# Creating a function to call which number is higher
 def highernumber(a, b):
     print('Hello there, this function will differentiate between a and b')
     if a > b:
