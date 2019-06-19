@@ -19,5 +19,5 @@ movie["is_awesome"] = True
 movie["budget"] = 102000000
 movie["cinematographer"] = "Janusz Kami\u0144ski"
 
-file2 = open("C:/movie.txt", "w", encoding="utf-8")
-json.dump(movie2, file2, ensure_ascii=False)
+file2 = open("F:\GItHub\Python_Exercise\movie.txt", "w", encoding="utf-8")
+json.dump(movie, file2, ensure_ascii=False)
