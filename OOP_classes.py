@@ -33,3 +33,8 @@ class User:
 user1 = User("Dave John", "01012000","soccer")
 user2 = User("Knight Frank", "02022000", "archer")
 
+# Print the age of User1
+print("{user1} name is {name} and is {age} years old".format(name=user1.name, age=user1.age))
+
+# Print the age of User2
+print("{user2} name is {name} and is {age} years old".format(name=user2.name, age=user2.age))
