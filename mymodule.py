@@ -11,4 +11,4 @@ def say_hi():
 __version__='0.1'
 
 
-# Current Chapter: Making your own module
+# Making your own module
