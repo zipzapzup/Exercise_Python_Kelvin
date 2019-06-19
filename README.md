@@ -1,2 +1,4 @@
-# Hello_World_Test
-# Hello Test 2 :)
+# Repository for exercising basic functionality of python3
+
+My own personal exercise.
+
