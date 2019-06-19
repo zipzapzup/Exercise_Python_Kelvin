@@ -1,4 +1,3 @@
-# Repository for exercising basic functionality of python3
-
-My own personal exercise.
+# Python 3
+My own personal exercising activities and recap of python3.
 
