@@ -19,3 +19,8 @@ else:
 
 
 # Note, if we didnt use from, we need to write math.sqrt(16)
+
+# Using pow builtin functions to utilise the power of calculations.
+
+print(pow(2,10)
+# Answers are 1024 
