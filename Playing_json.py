@@ -21,3 +21,4 @@ movie["cinematographer"] = "Janusz Kami\u0144ski"
 
 file2 = open("F:\GItHub\Python_Exercise\movie.txt", "w", encoding="utf-8")
 json.dump(movie, file2, ensure_ascii=False)
+file2.close()
