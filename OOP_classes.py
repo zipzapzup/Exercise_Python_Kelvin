@@ -1,3 +1,5 @@
+import datetime
+
 class User:
   """ Creating user classes. Where User is a database where we can store User's personal data. As this is a test function, we are only storing 3 variables
   Name, Birthday and Hobby
@@ -14,7 +16,7 @@ class User:
   self.first_name = name_split[0]
   self.last_name = name_split[1]
   
-  def age(self):
+    def age(self):
     today = datetime.date.today()
     yyyy = int(self.birthday[0:4])  # birthday is a string previously, so need to convert it into int
     mm = int(self.birthday[4:6])
