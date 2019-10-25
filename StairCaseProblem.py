@@ -15,7 +15,7 @@ import os
 # Iterate is firstly used to take the input from user
 # then 2 loops which print the space and the bar
 
-
+# Solutions1
 iterate = int(input("Enter Input:"))
 def printStairs(iterate):
     for i in range(iterate):
@@ -30,3 +30,20 @@ def printStairs(iterate):
 
 
 printStairs(iterate)
+
+
+# Solutions2 on how to do it another way
+# levels = int(input())
+# for x in range(levels):
+#     x = x + 1
+#     spaces = ' ' * (levels - x)
+#     blocks = '#' * x
+#     out_str = (spaces+blocks).rstrip()
+#     print(out_str)
+
+
+# Solutions3 on how to do it another way
+# cases = int(input())
+
+# for i in range(1, cases + 1):
+#     print((cases - i) * " " + i * "#")    
