@@ -48,7 +48,17 @@ def minmax(data):
 
 print("EX3: " + str(minmax([3,2,7,4])))
 
-# Exercises 4
+# Exercises 4 and 5
 def sumsquare(n):
     if n < 0:
-        raise ValueError("Invalid number, n must be postive")
+        raise ValueError("Invalid number, n must be positive")
+    totals = sum([i*i for i in range(n)])
+    return totals
+
+print("EX4:", sumsquare(5))
+
+# Exercises 6
+def squareodd(n):
+    if n < 0:
+        raise ValueError("Invalid number, n must be positive")
+    
