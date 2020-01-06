@@ -152,8 +152,10 @@ def distinct(data):
 print("Ex15:", determinedistinct([1,3,5]))
 
 #Exercise 16
-# Our implementation of scale changes the actual parameter since the use of operator *= is acted on the list itselves data[j]. List is a mutable class and can be changed.
-# Its different when running the operator on the string class, as string class is immutable and cannot be changed. Mutating the string will not take place since it is limited to the scope of variables.
+# Integer is immutable and cannot be changed, however on the scale function, the assignment is made on the list element directly. List is mutable. KEY: data[j] =
+
+#Exercise 17
+# It will not work, since the assignment is made on val, which only exist on the local namespace and not a mutable instance. It is a temporary variable inside the function. KEY: val =
 
 #Exercise 17
 # def scale(data,factor):
