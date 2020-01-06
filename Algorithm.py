@@ -23,6 +23,7 @@ print("EX2: " + str(is_even(4)))
 def is_even2(k):
     isEven = True
     for i in range(1,(k+1)):
+        a = i
         if isEven == True:
             isEven = False
         elif isEven == False:
@@ -215,3 +216,37 @@ def arrayproduct(ar1=[], ar2=[]):
 print("Ex22:", arrayproduct([1,2,3,4],[9,8,7,6]))
 
 #Exercise 23
+
+def outofbound(data):
+    try:
+        data[len(data)+1]
+    except IndexError:
+        print("Ex23: Don't try buffer overflow attacks in Python!")
+
+outofbound([1,2])
+
+
+#Exercise 24
+def vowelcount(data):
+    assert type(data) == str, "Needs to be a string"
+    vowel = ['a','i','u','e','o']
+    total = 0
+    for i in range(len(vowel)):
+        total += data.count(vowel[i])
+    return total
+
+# Version 2 of vowel
+def vowel2(data, vowel = {'a','i','u','e','o'}):
+    total = 0
+    lowercasedata = data.lower()
+    for i in lowercasedata:
+        if i in vowel: total += 1
+    return total
+
+
+
+print("Ex24:", vowelcount("trees"), vowel2("trees"))
+
+#Exercise 25
+def removepunctuation(string, punc = {'!','?',',','"',"'",'.'} ):
+    
