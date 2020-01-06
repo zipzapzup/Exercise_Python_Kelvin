@@ -151,4 +151,57 @@ def distinct(data):
 print("Ex15:", determinedistinct([1,3,5]))
 
 #Exercise 16
-# Because the call is made on list and the assignment is made on the list element directly.
+# Our implementation of scale changes the actual parameter since the use of operator *= is acted on the list itselves data[j]. List is a mutable class and can be changed.
+# Its different when running the operator on the string class, as string class is immutable and cannot be changed. Mutating the string will not take place since it is limited to the scope of variables.
+
+#Exercise 17
+# def scale(data,factor):
+#     for val in data:
+#         val *= factor
+# This will not work since you are making changes to val variable and val is only limited to the function scope, local namespace.
+
+#Exercise 18
+# Sequence: [0,2,6,12,20,30,42,56,72,90]
+# Formula: n^2 + n
+print("Ex18:",  [ (pow(i,2) + i) for i in range(10)])
+
+#Exercise 19
+# In here we utilise the use of chr and ord.
+# chr() return the string representation for one character given the unicode point, for example chr(97) = 'a'
+# ord() will return the unicode point for one character, example ord('a') = 97
+# More information: https://www.rapidtables.com/code/text/unicode-characters.html
+
+print("Ex19:", [chr(i) for i in range(97,123)])
+
+#Exercise 20
+# import random
+
+def shuffle1(data):
+    assert type(data) == list, "Not a list"
+    for i in range(len(data)):
+        a = random.randint(0,len(data)-1)
+        data[i], data[a] = data[a], data[i]
+    return data
+
+print("Ex20:", shuffle1([1,2,3,4,5,6,7,8,9,10]))
+
+#Exercise 21
+# Write a Python program that repeatedly reads lines from standard input
+# until an EOFError is raised, and then outputs those lines in reverse order
+# (a user can indicate end of input by typing ctrl-D).
+def typemore():
+    a = []
+    print("Input anything you want, end with ctrl-d")
+    while True:
+        try:
+            a.append(input())
+        except EOFError:
+            a.reverse()
+            print("Ex21:")
+            for line in a:
+                print(line)
+            return
+
+typemore()
+
+#Exercise 22
