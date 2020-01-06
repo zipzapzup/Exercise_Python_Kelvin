@@ -202,6 +202,16 @@ def typemore():
                 print(line)
             return
 
-typemore()
+# typemore()
 
 #Exercise 22
+def arrayproduct(ar1=[], ar2=[]):
+    assert len(ar1) == len(ar2), "Length must match"
+    newarray = []
+    for i in range(len(ar1)):
+        newarray.append( ar1[i] * ar2[i])
+    return newarray
+
+print("Ex22:", arrayproduct([1,2,3,4],[9,8,7,6]))
+
+#Exercise 23
