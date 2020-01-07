@@ -251,4 +251,39 @@ print("Ex24:", vowelcount("trees"), vowel2("trees"))
 
 #Exercise 25
 def removepunctuation(string, punc = {'!','?',',','"',"'",'.'} ):
-    
+    Array = list(string)
+    for i in Array:
+        if i in punc:
+            Array.remove(i)
+        else:
+            continue
+    return ''.join(Array)
+# Loop the list and check if each Char is in the set. Remove if it sees it. 
+# Need to perform this since remove only remove() the first occurences
+
+print("Ex25:", removepunctuation("Do you know? This phrase's uses,a,lot.Of. Punctuation!"))
+
+
+#Excercise26
+def checkformula(a, b, c):
+    # a = int(input("a ="))
+    # b = int(input('b ='))
+    # c = int(input('c ='))
+    if a + b == c:
+        return True
+    elif a == b - c:
+        return True
+    elif a * b == c:
+        return True
+    else:
+        return False
+
+print("Ex26:", checkformula(2,2,4))
+
+#Exercise27
+# In Section 1.8, we provided three different implementations of a generator
+# that computes factors of a given integer. The third of those implementations,
+# from page 41, was the most efficient, but we noted that it did not
+# yield the factors in increasing order. Modify the generator so that it reports
+# factors in increasing order, while maintaining its general performance advantages.
+
