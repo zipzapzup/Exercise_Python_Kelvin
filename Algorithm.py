@@ -287,3 +287,29 @@ print("Ex26:", checkformula(2,2,4))
 # yield the factors in increasing order. Modify the generator so that it reports
 # factors in increasing order, while maintaining its general performance advantages.
 
+def factorgenerator(n):
+    for i in range(1,n+1):
+        if n % i == 0:
+            yield i
+        else:
+            continue
+
+a = factorgenerator(100)
+print("Ex27:", [i for i in a])
+
+# Exercise28
+# Euclidean norm, length of vector given 2 coordinates
+# Original formula  |v| = (v1^p + v2^p + v3^p) ** 1/p
+
+def norm(v,p=2):
+    total = sum([i**p for i in v])
+    return total **(1/p)
+print("Ex28:", norm([3,4]))
+    
+
+#Exercise29
+def genstring(n=['c','a','t','d','o','g']):
+    all = {}
+    for i in range(n):
+        n[i]
+
