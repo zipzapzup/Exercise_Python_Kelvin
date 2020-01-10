@@ -308,8 +308,24 @@ print("Ex28:", norm([3,4]))
     
 
 #Exercise29
-def genstring(n=['c','a','t','d','o','g']):
-    all = {}
-    for i in range(n):
-        n[i]
+# Permutations Continue ?
 
+def permutate(string, step =0):
+    if step == len(string):
+        print( "".join(string))
+    for i in range(step, len(string)):
+        string_copy = list(string)
+        string_copy[step], string_copy[i] = string_copy[i], string_copy[step]
+        permutate(string_copy, step +1)
+
+
+
+
+
+
+
+
+
+
+
+permutate("123")
