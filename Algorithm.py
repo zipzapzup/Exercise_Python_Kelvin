@@ -1,4 +1,5 @@
 import random
+import itertools
 
 # Exercises 1
 def is_multiple(n,m):
@@ -278,7 +279,7 @@ def checkformula(a, b, c):
     else:
         return False
 
-print("Ex26:", checkformula(2,2,4))
+print("Ex26:{}".format(str(checkformula(2,2,4))))
 
 #Exercise27
 # In Section 1.8, we provided three different implementations of a generator
@@ -295,7 +296,7 @@ def factorgenerator(n):
             continue
 
 a = factorgenerator(100)
-print("Ex27:", [i for i in a])
+print("Ex27:{}".format([i for i in a]))
 
 # Exercise28
 # Euclidean norm, length of vector given 2 coordinates
@@ -304,7 +305,7 @@ print("Ex27:", [i for i in a])
 def norm(v,p=2):
     total = sum([i**p for i in v])
     return total **(1/p)
-print("Ex28:", norm([3,4]))
+print("Ex28:{}".format( norm([3,4])))
     
 
 #Exercise29
@@ -314,3 +315,67 @@ def genstring(n=['c','a','t','d','o','g']):
     return all
 
 print(len(genstring()))
+
+
+# step string i
+# 0 123  
+
+# Exercise 29 solutions with Permutations in itertools
+catdog = itertools.permutations(list('catdog'))
+
+# print("Ex29:", [i for i in catdog])
+
+# Permutations with recursive functions
+# Note: 3!
+# Note: 3* 2!
+# Note: 3* 2* 1!
+
+# Recursive Factorial going backwards. Any Recursive functions, we need to establish a baseline when it finishes.
+def recursive_factorial(n):
+    if n < 0:
+        return False  # Error check
+    elif n < 2:
+        return 1      # What do we return
+    else:
+        return n * recursive_factorial(n-1)
+
+# print(recursive_factorial(3))
+# Recursive Factorial going forward with a for loop.
+def iterative_factorial(n):
+    if n < 0:
+        return False
+    else:
+        fact = 1
+        for i in range(1, n+1):
+            fact *= i
+        return fact
+# print(iterative_factorial(3))
+
+#Exercise29
+# Permutations Continue 
+# Backtrack solution
+
+def permutate(string, step =0):
+    if step == len(string):
+        print( "".join(string))
+    for i in range(step, len(string)):
+        string_copy = list(string)
+        string_copy[step], string_copy[i] = string_copy[i], string_copy[step]
+        permutate(string_copy, step +1)
+print("Ex29:")
+permutate("123")
+
+#Exercise 30
+# Write a Python program that can take a positive integer greater than 2 as
+# input and write out the number of times one must repeatedly divide this
+# number by 2 before getting a value less than 2.
+
+def dividemore(n):
+    assert type(n) == int and n > 2, "Error Encountered, N needs to be greater than 2"
+    count = 0 
+    while n > 2:
+        n /= 2
+        count += 1
+    return count
+
+print("Ex30: {}".format(dividemore(12)) )
