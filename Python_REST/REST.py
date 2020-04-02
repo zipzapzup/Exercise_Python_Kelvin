@@ -1,4 +1,5 @@
 import requests
+from requests.auth import HTTPBasicAuth
 
 # Documentation: https://docs.python.org/3/library/urllib.request.html
 # Requests Bin - Inspect HTTP Requests
@@ -142,7 +143,50 @@ print(binreq.text)
 # }
 
 
+# POST Requests for Images sending picture
+# Open in Binary
+# MIME type
+files = {'file' : open('Python_REST\\turtle.gif', 'rb')}
+image = requests.post('https://requestinspector.com/inspect/01e4wrsthzddtj0rxqtzmttpaf', files=files)
+
+# POST /inspect/01e4wrsthzddtj0rxqtzmttpaf HTTP/1.1
+# requestinspector.com
+# User-Agent: python-requests/2.22.0
+# Content-Type: multipart/form-data; boundary=783f0871d4da5bef69703617979caa80
+# Accept: */*
+# Accept-Encoding: gzip
+# Content-Length: 7766
+
+files2 = {'file' : ('turtle.gif', open('Python_REST\\turtle.gif', 'rb'), 'image/gif' )}
+image2 = requests.post('https://requestinspector.com/inspect/01e4wrsthzddtj0rxqtzmttpaf', files=files2)
+
+
+# POST /inspect/01e4wrsthzddtj0rxqtzmttpaf HTTP/1.1
+# requestinspector.com
+# Content-Type: multipart/form-data; boundary=63874a61ea6f2b389356ac7a99b72978
+# User-Agent: python-requests/2.22.0
+# Accept: */*
+# Accept-Encoding: gzip
+# Content-Length: 7791
+# Raw
+# --63874a61ea6f2b389356ac7a99b72978
+# Content-Disposition: form-data; name="file"; filename="turtle.gif"
+# Content-Type: image/gif
 
 
 
-# POST Requests for Images
+eror_catch = requests.get('https://httpbin.org/status/500')
+
+try:
+    eror_catch.raise_for_status()
+except requests.exceptions.HTTPError as e:
+    print(e, 'Error in GET')
+
+
+### Basic Authentication
+
+Basic = requests.get('https://httpbin.org/basic-auth/user/passwd', auth=HTTPBasicAuth('user','passwd'))
+print(Basic)
+
+# <Response [401]> for Unauthorised
+# <Response [200]> for Successful Authentication
