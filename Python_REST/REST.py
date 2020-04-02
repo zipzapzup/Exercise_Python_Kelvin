@@ -29,6 +29,7 @@ headers = {'my-token':'9sadf9sakdafiads9nvj213j901mn' }
 FakeAgent = {'User-Agent': 'Fake-Agent'}
 h = requests.get('https://requestinspector.com/inspect/01e4wrsthzddtj0rxqtzmttpaf', headers=headers)
 
+# GET is to REQUEST resources
 # GET /inspect/01e4wrsthzddtj0rxqtzmttpaf HTTP/1.1
 # requestinspector.com
 # Accept-Encoding: gzip
@@ -37,3 +38,111 @@ h = requests.get('https://requestinspector.com/inspect/01e4wrsthzddtj0rxqtzmttpa
 # My-Token: 9sadf9sakdafiads9nvj213j901mn
 
 
+post = requests.post('https://requestinspector.com/inspect/01e4wrsthzddtj0rxqtzmttpaf')
+# CRUD life (Create )
+# POST is to CREATE Resources
+#POST /inspect/01e4wrsthzddtj0rxqtzmttpaf HTTP/1.1
+# requestinspector.com
+# Content-Length: 0
+# Accept-Encoding: gzip
+# Accept: */*
+# User-Agent: python-requests/2.22.0
+
+
+delete = requests.delete('https://requestinspector.com/inspect/01e4wrsthzddtj0rxqtzmttpaf')
+# DELETE is to DELETE Resources
+# DELETE /inspect/01e4wrsthzddtj0rxqtzmttpaf HTTP/1.1
+# requestinspector.com
+# User-Agent: python-requests/2.22.0
+# Accept-Encoding: gzip
+# Accept: */*
+
+
+put = requests.put('https://requestinspector.com/inspect/01e4wrsthzddtj0rxqtzmttpaf')
+
+# PUT MODIFY all resources
+# PUT /inspect/01e4wrsthzddtj0rxqtzmttpaf HTTP/1.1
+# requestinspector.com
+# Content-Length: 0
+# Accept: */*
+# User-Agent: python-requests/2.22.0
+# Accept-Encoding: gzip
+
+
+patch = requests.patch('https://requestinspector.com/inspect/01e4wrsthzddtj0rxqtzmttpaf')
+
+# PATCH ususally modify part of the resources
+# PATCH /inspect/01e4wrsthzddtj0rxqtzmttpaf HTTP/1.1
+# requestinspector.com
+# User-Agent: python-requests/2.22.0
+# Accept-Encoding: gzip
+# Accept: */*
+
+
+payload1 = {'name': 'Bob', 'job':'CloudEngineer'}
+j = requests.post('https://reqres.in/api/users', json=payload1)
+print(j.text, j)
+
+
+# Send form data
+payload2 = {'name': 'Bob2', 'location': 'NSW'}
+j2 = requests.post('https://requestinspector.com/inspect/01e4wrsthzddtj0rxqtzmttpaf', data=payload2)
+
+# POST /inspect/01e4wrsthzddtj0rxqtzmttpaf HTTP/1.1
+# requestinspector.com
+# Content-Length: 22
+# Accept: */*
+# Accept-Encoding: gzip
+# User-Agent: python-requests/2.22.0
+# Content-Type: application/x-www-form-urlencoded
+# Raw
+# name=Bob2&location=NSW
+
+j3 = requests.post('https://requestinspector.com/inspect/01e4wrsthzddtj0rxqtzmttpaf', json=payload2)
+
+# POST /inspect/01e4wrsthzddtj0rxqtzmttpaf HTTP/1.1
+# requestinspector.com
+# User-Agent: python-requests/2.22.0
+# Accept-Encoding: gzip
+# Content-Type: application/json
+# Content-Length: 35
+# Accept: */*
+# Json
+# Raw
+# {
+#     "name": "Bob2",
+#     "location": "NSW"
+# }
+
+payload3 = {'name':'Cool', 'location':'Melbourne'}
+binreq = requests.post('https://httpbin.org/post', data=payload3 )
+print(binreq.text)
+
+
+# {
+#   "args": {},
+#   "data": "",
+#   "files": {},
+#   "form": {
+#     "location": "Melbourne",
+#     "name": "Cool"
+#   },
+#   "headers": {
+#     "Accept": "*/*",
+#     "Accept-Encoding": "gzip, deflate",
+#     "Content-Length": "28",
+#     "Content-Type": "application/x-www-form-urlencoded",
+#     "Host": "httpbin.org",
+#     "User-Agent": "python-requests/2.22.0",
+#     "X-Amzn-Trace-Id": "Root=1-5e859053-ec59cba00d8bd818832cf8c8"
+#   },
+#   "json": null,
+#   "origin": "101.180.72.241",
+#   "url": "https://httpbin.org/post"
+# }
+
+
+
+
+
+# POST Requests for Images
