@@ -308,8 +308,9 @@ print("Ex28:", norm([3,4]))
     
 
 #Exercise29
+# All string output once
 def genstring(n=['c','a','t','d','o','g']):
-    all = {}
-    for i in range(n):
-        n[i]
+    all = set()
+    return all
 
+print(len(genstring()))
