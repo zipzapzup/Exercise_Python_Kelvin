@@ -4,3 +4,6 @@ import requests
 # Requests Bin - Inspect HTTP Requests
 # Reqres.in - Fake API data
 # HTTPBin - Fake API
+
+r = requests.get('https://google.com')
+print(r.status_code)
