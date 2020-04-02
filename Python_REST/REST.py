@@ -26,6 +26,7 @@ p = requests.get('https://requestinspector.com/inspect/01e4wrsthzddtj0rxqtzmttpa
 
 # Requests with Headers
 headers = {'my-token':'9sadf9sakdafiads9nvj213j901mn' }
+FakeAgent = {'User-Agent': 'Fake-Agent'}
 h = requests.get('https://requestinspector.com/inspect/01e4wrsthzddtj0rxqtzmttpaf', headers=headers)
 
 # GET /inspect/01e4wrsthzddtj0rxqtzmttpaf HTTP/1.1
