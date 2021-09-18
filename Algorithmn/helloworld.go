@@ -10,7 +10,6 @@ func algo(a int, b int) int {
 		remainder := a % b
 		a = b
 		b = remainder
-
 	}
 	return a
 
