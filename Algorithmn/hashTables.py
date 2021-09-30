@@ -12,7 +12,18 @@ print(newDict)
 print(newDict[9])
 
 Dict1 = sorted(newDict.items())
-print(Dict1)
+print("Sorted: ", Dict1)
 
-a = "".join(Dict1.values())
-print(a)
+a = "".join(str(Dict1))
+print("A is:", a)
+
+
+items1 = dict({"key1" : 1, "key2": 2 , "key3" : 3})
+print(items1)
+
+
+
+# iterate items and values on hashtables
+
+for key, value in items1.items():
+    print("key: ",key, " value: ", value) 
