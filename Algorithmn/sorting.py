@@ -16,3 +16,4 @@ BubbleSort([100,50,20,1,2])
 
 
 def MergeSort(data):
+    pass
