@@ -34,11 +34,16 @@ create_2darray2(5,2)
 # 2D Arrays and 1D Arrays have their own problems
 # Accessing 1D Arrays
 
-array1 = [1,2,3,4,5,6]
+array1 = [[1,2,3],[5,1,0],[9,9,9]]
 
+# Prints holistically
 for i in array1:
     print(i)
 
+# Access Each Value
+for i in range(len(array1)):
+    for k in range(len(array1[i])):
+        print(array1[i][k], end='')
 
 # Accessing 2D Arrays is in the format of
 # array[row][col]
