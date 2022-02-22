@@ -23,3 +23,12 @@ def count_bits_my(x: int) -> int:
 
 print(count_bits(28))
 print(count_bits_my(28))
+
+
+# Bit and binary operations
+
+def clear_4binarydigit(n : int):
+    clear = int('0b11110000',2) # 240
+    n &= clear
+    return n
+
