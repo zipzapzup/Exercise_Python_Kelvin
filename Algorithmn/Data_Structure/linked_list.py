@@ -1,4 +1,5 @@
 # Implement Singly Linked List
+
 # Using a stack based LIFO mechanisms
 # You need to initialise the LinkedList from the end to the start. I.E. Sunday -> Monday
 
@@ -20,6 +21,9 @@ class LinkedList(object):
         newNode = Node(value)
         newNode.next = self.head
         self.head = newNode
+
+    # Remove from Head
+    def remove(self):
 
     # O(N) Time Complexity, O(1) Space Complexity
     def printList(self):
@@ -55,3 +59,21 @@ Weekdays.printList()
 print("Looping .......")
 for i in Weekdays:
     pass
+
+
+class LinkedListTail(object):
+    def __init__(self, value):
+        newNode = Node(value)
+        self.tail = newNode
+
+    def insert(self,value):
+        newNode = Node(value)
+        self.tail.next = newNode
+        self.tail = newNode
+
+    def print(self):
+
+a = LinkedList(Node('one'))
+a.insertFromBottom('two')
+a.insertFromBottom('three')
+a.printList()
