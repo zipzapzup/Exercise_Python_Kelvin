@@ -17,13 +17,19 @@ class LinkedList(object):
         self.counter = 0
 
     # O(1) Time Complexity, O(N) Space complexity
+    # Head First Insert
     def insert(self, value):
         newNode = Node(value)
         newNode.next = self.head
         self.head = newNode
 
     # Remove from Head
+    # O(1) Time Complexity, O(1) Space Complexity
     def remove(self):
+        if self.head is None:
+            return "Error, LinkedList empty"
+        else:
+            self.head = self.head.next
 
     # O(N) Time Complexity, O(1) Space Complexity
     def printList(self):
