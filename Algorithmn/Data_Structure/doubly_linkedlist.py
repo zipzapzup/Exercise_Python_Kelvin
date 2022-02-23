@@ -19,12 +19,14 @@ class LinkedList2:
         self.tail = newNode
 
     # Insert at head
+    # O(1) Time, O(1) Space
     def insert(self, data):
         newNode = Node(data)
         self.head.left = newNode
         newNode.right = self.head
         self.head = newNode
 
+    # O(N) Time O(1) Space
     def insert_position(self, position, data):
         newNode = Node(data)
         count = 0
@@ -44,9 +46,11 @@ class LinkedList2:
             currentNode = currentNode.right
             count += 1
 
+    # O(1)
     def print_head(self):
         print(self.head.value, self.head.right, self.head.left)
 
+    # O(1) Space and Time
     def remove_head(self):
         currentNode = self.head
         self.head = self.head.right
@@ -54,6 +58,7 @@ class LinkedList2:
         self.head.left = None
 
     # Print all list from head
+    # O(n) Time O(1) Space
     def print(self):
         currentNode = self.head
         while currentNode:
