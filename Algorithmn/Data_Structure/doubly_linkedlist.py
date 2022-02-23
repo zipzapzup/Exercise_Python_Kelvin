@@ -1,9 +1,5 @@
 # Doubly linked list
 
-from asyncore import dispatcher_with_send
-from tokenize import Double
-
-
 class Node:
     def __init__(self, value):
         self.value = value
@@ -46,11 +42,11 @@ class LinkedList2:
             currentNode = currentNode.right
             count += 1
 
-    # O(1)
+    # O(1) Time and Space
     def print_head(self):
         print(self.head.value, self.head.right, self.head.left)
 
-    # O(1) Space and Time
+    # O(1) Time and Space
     def remove_head(self):
         currentNode = self.head
         self.head = self.head.right
