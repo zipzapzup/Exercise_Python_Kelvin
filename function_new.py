@@ -1,5 +1,5 @@
 # C:\Python36\
-impor math
+import math
 
 print("{}testing a function".format('kelvin'))
 
