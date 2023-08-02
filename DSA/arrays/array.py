@@ -1,4 +1,7 @@
 ## Arrays (lists)
+# O(1) Get and Update
+# O(n) Append or Insertion
+# O(n-i) Delete
 
 arr = [1,2,3]
 print(arr)

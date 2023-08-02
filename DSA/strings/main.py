@@ -14,3 +14,5 @@ string = ["ab", "cd", "ef"]
 
 ## O(n) Operation
 print("".join(string))
+
+
