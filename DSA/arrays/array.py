@@ -1,4 +1,4 @@
-import time
+import time, sys
 ## Arrays (lists)
 # O(1) Get and Update
 # O(n) Append or Insertion
@@ -165,3 +165,58 @@ def average(array):
     for i in array:
         sum += i
     return round(sum / length, 2)
+
+
+# Two Types of Arrays in Python
+# Dynamic Arrays : Lists
+# Fixed size Arrays, compact arrays: Strings, Tuples
+#
+# List in python is a dynamic array
+# that holds a containers which provides a 
+# referential type of data structure
+
+data = []
+for i in range(100):
+    a = len(data)
+    b = sys.getsizeof(data)
+    print('Length: {0:3d}; Size in Bytes: {1:4d}'.format(a,b))
+
+# Under the hood
+# when Dynamic Array is expanded beyond the capacity
+# O(n) Time Complexity operation
+# 
+# # Length:   0; size in bytes:   56
+# Length:   1; size in bytes:   88
+# Length:   2; size in bytes:   88
+# Length:   3; size in bytes:   88
+# Length:   4; size in bytes:   88
+# Length:   5; size in bytes:  120
+# Length:   6; size in bytes:  120
+# Length:   7; size in bytes:  120
+# Length:   8; size in bytes:  120
+# Length:   9; size in bytes:  184
+# Length:  10; size in bytes:  184
+# Length:  11; size in bytes:  184
+# Length:  12; size in bytes:  184
+# Length:  13; size in bytes:  184
+# Length:  14; size in bytes:  184
+# Length:  15; size in bytes:  184
+# Length:  16; size in bytes:  184
+# Length:  17; size in bytes:  256
+
+# high score array
+# insert O(n) Time Complexity
+# insert high score if the score is bigger than the previous
+highscore = [0] * 10
+def insertScore(data, score):
+    n = len(data) - 1
+    
+    while n > 0 and data[n-1] < score:
+        data[n] = data[n-1]
+        n -= 1
+    data[n] = score
+
+
+insertScore(highscore, 10)
+
+
