@@ -146,6 +146,15 @@ def sigmaAdd(x):
     return sum
 
 
+# [1,1,2]
+def findDuplicate(array: list) -> list:
+    result = []
+    for i in array:
+        temp = abs(i)
+        if array[temp-1] < 0:
+            result.append(temp)
+        array[temp-1] -array[temp-1]
+        return result
 
 # find max number in an element
 # O(n) time
