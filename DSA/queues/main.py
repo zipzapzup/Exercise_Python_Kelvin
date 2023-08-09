@@ -34,3 +34,28 @@ queue.clear()
 
 # remove first occurrence O(n)
 queue.remove(1)
+
+
+
+# Array implementation of queueu
+# inefficient implementation
+# dequeue is using a pop(0) 
+# on all case it will be O(n)
+# since it needs to shift the list
+# O(1) append the queue - armortised to O(n)
+# O(n) dequeue pop(0)
+# 
+class ArrayQueue:
+    def __init__(self):
+        self.queue = []
+
+    def queue(self, element):
+        self.queue.append(element)
+
+    def dequeue(self):
+        return self.queue.pop(0)
+    
+    def __len__(self):
+        return len(self.queue)
+    
+
