@@ -61,4 +61,31 @@ class BinaryTree:
         self.left = left
         self.right = right
 
+    def insert(self, data):
+        if self.data:
+            if data < self.data:
+                if self.left is None:
+                    self.left = data
+                else:
+                    self.left.insert(data)
+            elif data > self.data:
+                if self.right is None:
+                    self.right = data
+                else:
+                    self.right.insert(data)
+        else:
+            self.data = data
+
+    # root node visited first
+    # then left sub tree
+    # and right sub tree
+    # O(n) Time Complexity
+    def preorderTraversal(self):
+        visits = []
+        if self:
+            visits.append(self.data)
+            visits = visits + self.preorderTraversal(self.left)
+            visits = visits + self.preorderTraversal(self.right)
+        return visits
+
     
