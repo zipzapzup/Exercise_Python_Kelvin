@@ -76,6 +76,8 @@ class BinaryTree:
         else:
             self.data = data
 
+    # preorder traversal
+    # root > left > right
     # root node visited first
     # then left sub tree
     # and right sub tree
@@ -88,4 +90,26 @@ class BinaryTree:
             visits = visits + self.preorderTraversal(self.right)
         return visits
 
+    # post order traversal
+    # left > right > root
+    # visits
+    # O(n) Complexity
+    def postorderTraversal(self):
+        visit = []
+        if self:
+            visit = self.postorderTraversal(self.right)
+            visit = self.postorderTraversal(self.left)
+            visit.append(self.data)
+        return visit
     
+    # in order traversal
+    # left > root > right
+    # O(n) Complexity
+    # print in ascending order
+    def inorderTraversal(self):
+        visit = []
+        if self:
+            visit = visit + self.inorderTraversal(self.left)
+            visit.append(self.data)
+            visit = visit + self.inorderTraversal(self.right)
+        return visit
