@@ -25,12 +25,11 @@ class TreeNode:
         allnode = [self]
         while len(allnode) > 0:
             currentTree = allnode.pop()
-            if currentTree.data is None:
-                break
-            else:
-                print(currentTree.data)
-            allnode = allnode + currentTree.children
-        
+            if len(currentTree.children) > 0:
+                allnode = allnode + currentTree.children
+            print(currentTree.data)
+                
+
     def countNodes(self):
         nodes = [self]
         sum = 0
@@ -39,6 +38,10 @@ class TreeNode:
             sum += 1
             nodes = nodes + current.children
         return sum
+
+    def preorderTraversal(self, root):
+        print(self.data)
+
 
 
 t1 = TreeNode(5)
@@ -76,6 +79,8 @@ class BinaryTree:
         else:
             self.data = data
 
+    def height(node):
+        if self.
     # preorder traversal
     # root > left > right
     # root node visited first
