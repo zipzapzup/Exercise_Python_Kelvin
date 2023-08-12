@@ -62,3 +62,25 @@ heapq.heapify(arr)
 while arr:
     print(heapq.heappop(arr))
 
+def minHeapSort(arr: list):
+    minHeap = []
+    for i in arr:
+        heapq.heappush(minHeap, i)
+    while minHeap:
+        print(heapq.heappop(minHeap))
+
+def transformListHeap(arr: list):
+    heapq.heapify(arr)
+    while arr:
+        element = heapq.heappop()
+        print(element)
+
+
+def maxHeapSort(arr: list):
+    maxHeap = []
+    for i in arr:
+        heapq.heappush(maxHeap, -1 * i)
+    while maxHeap:
+        print(-1 * heapq.heappop(maxHeap))
+        
+    
