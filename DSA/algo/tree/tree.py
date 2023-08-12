@@ -118,3 +118,42 @@ class BinaryTree:
             visit.append(self.data)
             visit = visit + self.inorderTraversal(self.right)
         return visit
+
+    def preOrderTraversal(root):
+        if root:
+            print("PreOrder Traversal: ", root.data)
+            preOrderTraversal(root.left)
+            preOrderTraversal(root.right)
+
+    def PostOrderTraversal(root):
+        if root:
+            postOrderTraversal(root.left)
+            postOrderTraversal(root.right)
+            print("PostOrder Traversal: ", root.data)
+
+    def InOrderTraversal(root):
+        if root:
+            InOrderTraversal(root.left)
+            print("InOrder Traversal: ", root.data)
+            InOrderTraversal(root.right)
+
+    def preOrderTraversalv2(root):
+        if root is None:
+            return
+        print("Preorder Traversal:", root.data)
+        preOrderTraversalv2(self.left)
+        preOrderTraversalv2(self.right)
+    
+    def postOrderTraversalv2(root):
+        if root is None:
+            return
+        postOrderTraversalv2(self.left)
+        postOrderTraversalv2(self.right)
+        print("Postorder Traversal :", root.data)
+    
+    def inordertraversalv2(root) -> None:
+        if root is None:
+            return
+        inordertraversalv2(root.left)
+        print("InOrder Traversal :", root.data)
+        inordertraversalv2(root.right)
