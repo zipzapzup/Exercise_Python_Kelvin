@@ -1,4 +1,5 @@
 # Tree
+from collections import deque
 
 # normal tree implemenetation
 # tree can have more than 1 child
@@ -58,6 +59,11 @@ t1.traverse()
 
 print("Number of Nodes: ",t1.countNodes())
 
+# DFS (Depth First Search)
+# inorder: left, root, right
+# postorder: left, right, root
+# preorder: root, left, right
+
 class BinaryTree:
     def __init__(self, data, left=None, right =None):
         self.data = data
@@ -111,6 +117,9 @@ class BinaryTree:
     # left > root > right
     # O(n) Complexity
     # print in ascending order
+    # O(h) height of tree is the Space Complexity
+    #       - Complete Binary Tree (Log N)
+    #       - Skewed Tree (h)
     def inorderTraversal(self):
         visit = []
         if self:
@@ -157,3 +166,22 @@ class BinaryTree:
         inordertraversalv2(root.left)
         print("InOrder Traversal :", root.data)
         inordertraversalv2(root.right)
+
+    # BreathFirstSearch
+    # BFS
+    # O(n) Time Complexity *armortised
+    # O(n) Space complexity
+    def BFS(root):
+        if root is None:
+            return
+        queue = []
+        queue.append(root)
+        while len(queue) > 0:
+            print(queue[0], end=" ")
+            current = queue.pop(0)
+            if current.left is not None:
+                queue.append(current.left)
+            
+            if current.right is not None:
+                queue.append(current.right)
+        
