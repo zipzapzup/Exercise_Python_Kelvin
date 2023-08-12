@@ -74,7 +74,7 @@ class BinaryTree:
         if self.data:
             if data < self.data:
                 if self.left is None:
-                    self.left = data
+                    self.left = BinaryTree(data)
                 else:
                     self.left.insert(data)
             elif data > self.data:
@@ -85,8 +85,7 @@ class BinaryTree:
         else:
             self.data = data
 
-    def height(node):
-        if self.
+
     # preorder traversal
     # root > left > right
     # root node visited first
@@ -167,7 +166,7 @@ class BinaryTree:
         print("InOrder Traversal :", root.data)
         inordertraversalv2(root.right)
 
-    # BreathFirstSearch
+    # Breath First Search
     # BFS
     # O(n) Time Complexity *armortised
     # O(n) Space complexity
@@ -185,3 +184,34 @@ class BinaryTree:
             if current.right is not None:
                 queue.append(current.right)
         
+
+    # Optimised BFS
+    # Breath First Search
+    # O(n) Time Complexity
+    # O(n) space complexity    
+
+    def BFSOptimised(root):
+        if root is None:
+            return
+        queue = deque()
+        queue.append(root)
+        while len(queue) > 0:
+            print(queue[0].data, end= " ")
+            current = queue.popleft()
+            if current.left is not None:
+                queue.append(current.left)
+            if current.right is not None:
+                queue.append(current.right)
+
+    # height of tree
+    # can be found by finding the maximum depth
+    # in the case where root is None, its 0
+    # otherwise if root exist, then the height is at least one
+    # now, you want to return the max between these two
+    def treeHeight(root):
+        if root is None:
+            return 0
+        lheight = treeHeight(root.left)
+        rheight = treeHeight(root.right)
+
+        return max(lheight, rheight) + 1
