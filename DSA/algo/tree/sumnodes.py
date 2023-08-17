@@ -19,6 +19,14 @@ class BinaryTree:
             else:
                 self.right = newTree
     
+    # O(2n) -> O(n) Time Operation - tree
+    # O(n) Space Complexity
+    def sumNodesRecursive(self, root) -> int:
+        count = 0
+        if root is None:
+            return 0 #O(1)
+        return root.val + self.sumNodesRecursive(root.left) + self.sumNodesRecursive(root.right)
+
     def sumNodes(self, root) -> int:
         # preorder traversal
         count = 0
@@ -97,6 +105,7 @@ print(root.sumNodes(root), "preorder sumnodes")
 print(root.inordersumNodes(root), "inorder sumnodes")
 print(root.postordersumNodes(root), "postorder sumnodes")
 print(root.BFSsumNodes(root), "BFS level order")
+print(root.sumNodesRecursive(root), "Recursive")
 
 root2 = BinaryTree(10)
 root2.insert(1)
@@ -107,3 +116,4 @@ print(root2.sumNodes(root2), "preorder sumnodes")
 print(root2.inordersumNodes(root2), "inorder sumnodes")
 print(root2.postordersumNodes(root2), "postorder sumnodes")
 print(root2.BFSsumNodes(root2), "BFS level order")
+print(root2.sumNodesRecursive(root2), "Recursive")
