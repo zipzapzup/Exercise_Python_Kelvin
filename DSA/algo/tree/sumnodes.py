@@ -86,6 +86,9 @@ class BinaryTree:
             if current.right:
                 queue.append(current.right)
         return count
+    
+    def heightTree(self, root):
+        
 
 
 
