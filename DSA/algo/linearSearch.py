@@ -14,3 +14,16 @@ def linearSearch(n: list, target: int) -> bool:
 
 linearSearch(elements, 40) # True
 linearSearch(elements, 33) # False
+
+
+def minSearch(n: list):
+    minValue = n[0]
+    minIndex = 0
+    for i in range(1, len(n)):
+        if n[i] <= minValue:
+            minIndex = i
+    return minIndex
+
+
+
+

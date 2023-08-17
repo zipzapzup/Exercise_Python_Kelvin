@@ -16,3 +16,19 @@ string = ["ab", "cd", "ef"]
 print("".join(string))
 
 
+
+
+def perfectNumber():
+    perfectNum = []
+    for num in range(1,1000):
+        factorial = []
+        for i in range(1,num):
+            if num % i == 0:
+                factorial.append(i)
+        if sum(factorial) == num:
+            perfectNum.append(num)
+
+    return perfectNum
+
+
+print(perfectNumber())
