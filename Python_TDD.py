@@ -12,3 +12,26 @@ import unittest
 
 
 print("Hello World - Let's Begin TDD Approach")
+
+def addOne(n: int)-> int:
+    return n + 1
+
+class UnitTestCase(unittest.TestCase):
+    def test_addOne(self):
+        # example of unittest assert one conditions to another
+        self.assertEqual(addOne(5) ,6)
+        self.assertEqual(addOne(9), 10)
+
+        input = [10,11,12,13,14,15]
+        output = [11,12,13,14,15,16]
+
+        for i in range(len(input)):
+            self.assertEqual(addOne(input[i]),output[i])
+
+        for i in range(10000):
+            self.assertEqual(addOne(i), i + 1)
+
+
+
+if __name__ == '__main__':
+    unittest.main()
