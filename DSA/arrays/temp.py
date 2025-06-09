@@ -27,4 +27,5 @@ def dailyTemp(temperatures):
         stack.append((i, value))
     
     for i in range(len(temperatures)):
+        
 
