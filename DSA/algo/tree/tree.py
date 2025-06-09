@@ -127,50 +127,50 @@ class BinaryTree:
             visit = visit + self.inorderTraversal(self.right)
         return visit
 
-    def preOrderTraversal(root):
+    def preOrderTraversal(self, root):
         if root:
             print("PreOrder Traversal: ", root.data)
-            preOrderTraversal(root.left)
-            preOrderTraversal(root.right)
+            self.preOrderTraversal(root.left)
+            self.preOrderTraversal(root.right)
 
-    def PostOrderTraversal(root):
+    def PostOrderTraversal(self, root):
         if root:
-            postOrderTraversal(root.left)
-            postOrderTraversal(root.right)
+            self.postOrderTraversal(root.left)
+            self.postOrderTraversal(root.right)
             print("PostOrder Traversal: ", root.data)
 
-    def InOrderTraversal(root):
+    def InOrderTraversal(self, root):
         if root:
-            InOrderTraversal(root.left)
+            self.InOrderTraversal(root.left)
             print("InOrder Traversal: ", root.data)
-            InOrderTraversal(root.right)
+            self.InOrderTraversal(root.right)
 
-    def preOrderTraversalv2(root):
+    def preOrderTraversalv2(self, root):
         if root is None:
             return
         print("Preorder Traversal:", root.data)
-        preOrderTraversalv2(self.left)
-        preOrderTraversalv2(self.right)
+        self.preOrderTraversalv2(self.left)
+        self.preOrderTraversalv2(self.right)
     
-    def postOrderTraversalv2(root):
+    def postOrderTraversalv2(self,root):
         if root is None:
             return
-        postOrderTraversalv2(self.left)
-        postOrderTraversalv2(self.right)
+        self.postOrderTraversalv2(self.left)
+        self.postOrderTraversalv2(self.right)
         print("Postorder Traversal :", root.data)
     
-    def inordertraversalv2(root) -> None:
+    def inordertraversalv2(self, root) -> None:
         if root is None:
             return
-        inordertraversalv2(root.left)
+        self.inordertraversalv2(root.left)
         print("InOrder Traversal :", root.data)
-        inordertraversalv2(root.right)
+        self.inordertraversalv2(root.right)
 
     # Breath First Search
     # BFS
     # O(n) Time Complexity *armortised
     # O(n) Space complexity
-    def BFS(root):
+    def BFS(self, root):
         if root is None:
             return
         queue = []
@@ -190,7 +190,7 @@ class BinaryTree:
     # O(n) Time Complexity
     # O(n) space complexity    
 
-    def BFSOptimised(root):
+    def BFSOptimised(self, root):
         if root is None:
             return
         queue = deque()
@@ -208,10 +208,10 @@ class BinaryTree:
     # in the case where root is None, its 0
     # otherwise if root exist, then the height is at least one
     # now, you want to return the max between these two
-    def treeHeight(root):
+    def treeHeight(self, root):
         if root is None:
             return 0
-        lheight = treeHeight(root.left)
-        rheight = treeHeight(root.right)
+        lheight = self.treeHeight(root.left)
+        rheight = self.treeHeight(root.right)
 
         return max(lheight, rheight) + 1
